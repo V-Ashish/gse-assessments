@@ -1,0 +1,885 @@
+form{
+    .form-control{
+        border-color: $primary-color-one;
+        border-radius: 6px !important;
+        height: 50px;
+        width: 100%;
+        padding: 17px 14px;
+        margin-top: 10px;
+        position: relative;
+        text-transform: capitalize;
+        &:focus{
+            border-color: $primary-color-one;
+            background-color: transparent;
+        }
+        &:disabled{
+            border-color: $neutral-color-two;
+            background-color: $neutral-color-four;
+        }
+        &.hight-auto{
+            height: auto;
+        }
+    }
+    .input-box{
+        .form-control{
+            z-index: 10;
+            background-color: transparent;
+        }
+    }
+    .date-box {
+        .form-control{
+            &:focus{
+                background-color: transparent;
+            }
+        }
+    }
+    label{
+        display: block;
+        font-weight: $font-weight1;
+        span{
+            color: $red-color;
+        }
+    }
+    .input-field{
+        position: relative;
+        .date-icon{
+            position: absolute;
+            right: 25px;
+            bottom: 12px;
+            z-index: 9;
+        }
+        input[type="email"] {
+            text-transform: lowercase;
+        }
+    }
+        // datepicker
+
+    .date{
+        .input-group-append{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 9;
+        }
+    }
+    /*-- error-field --*/
+    .error-field{
+        input{
+            border-color: $red-color;
+        }
+        span{
+            color: $red-color;
+            font-size: $font-size14;
+        }
+    }
+    /*-- flag --*/
+    .flag-wrap{
+        position: relative;
+        .flag-img{
+            position: absolute;
+            left: 12px;
+            bottom: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        input{
+            padding: 0 10px 0 110px;
+        }
+        .call-icon{
+            position: absolute;
+            right: 18px;
+            bottom: 16px;
+            i{
+                color: $primary-color-one;
+            }
+        }
+    }
+    .input-select{
+        margin-bottom: 10px;
+        .select2-container {
+           
+            width: 100% !important;
+            &:focus{
+                outline: none;
+            }
+            .select2-selection--single{
+                border: 1px solid $primary-color-one;
+                background-color: $neutral-color-light;
+                margin-top: 12px;
+                position: relative;
+                height: 50px;
+                .select2-selection__arrow {
+                    height: 40px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 10px;
+                    width: 40px;
+                    b{
+                        border: 2px solid $neutral-color-one;
+                        height: 9px;
+                        width: 9px;
+                        transform: rotate(45deg) translateY(-50%);
+                        border-top: 0;
+                        border-left: 0;
+                        transition: all 0.5s;
+                        left: 50%;
+                        margin-left: -4px;
+                        margin-top: -2px;
+                        position: absolute;
+                        top: 50%;
+                    }
+                }
+            }
+            &.select2-container--open {
+                .select2-selection--single {
+                    .select2-selection__arrow {
+                        b{
+                            transform: rotate(-136deg);
+                        }
+                    }
+                }
+            }
+        }
+        &.disable-select{
+            .select2-container{
+                .select2-selection--single{
+                    border-color: $neutral-color-two;
+                    background-color: $neutral-color-four;
+                    
+                }
+                
+            }
+        }
+    }
+    
+    /*-- datepicker --*/
+    
+     /*-- datepicker disable--*/
+
+
+    /*-- password --*/
+    .inputWithIcon{
+        position: relative;
+        i{
+            position: absolute;
+            right: 25px;
+            top: 15px;        
+            color: $primary-color-one;
+        }
+    }
+
+}
+.select2-results__option[aria-selected]{
+    border: 1px solid transparent;
+    margin: 3px 0px 0px;
+    transition: 0.5s;
+}
+.select2-container--default{
+    .select2-results__option--highlighted[aria-selected]{
+       
+        border-color: $primary-color-one;
+        
+        border-radius: 0px;
+    }
+}
+.select2-container--default{
+    padding: 0;
+    .select2-search__field{
+        border: 1px solid $primary-color-one;
+    }
+    .select2-search--dropdown {
+        padding: 0;
+        .select2-search__field{
+            border: 1px solid $primary-color-one;
+        }
+    }
+} 
+
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-left: 14px;
+}
+
+label.form-check-box p {
+    width: auto;
+    line-height: 25px;
+    margin-left: 12px;
+}
+
+
+/*--- radio ---*/
+.radio-input{
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        width: 100%;
+        row-gap: 15px;
+        .radio {
+            min-width: 130px;
+            position: relative;
+            border: 1px solid $primary-color-one;
+            background-color: $bg-light-green;
+            border-radius: 5px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                + .radio-label {
+                    cursor: pointer;
+                    &:before {
+                        content: '';
+                        background: transparent;
+                        border-radius: 100%;
+                        border: 1px solid $primary-color-one;
+                        display: inline-block;
+                        width: 22px;
+                        height: 22px;
+                        position: relative;
+                        top: 0px;
+                        margin-right: 10px;
+                        vertical-align: top;
+                        cursor: pointer;
+                        text-align: center;
+                        transition: all 250ms ease;
+                    }
+                }
+                &:checked {
+                    + .radio-label {
+                        &:before {
+                        background-color: $primary-color-one;
+                        box-shadow: inset 0 0 0 4px #f4f4f4;
+                        }
+                    }
+                }
+                &:focus {
+                    + .radio-label {
+                        &:before {
+                        outline: none;
+                        border-color: $primary-color-one;
+                        }
+                    }
+                }
+                + .radio-label {
+                    &:empty {
+                        &:before {
+                        margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        &.merital-option{
+            column-gap: 20px;
+        }
+        &.shop-radio{
+            max-width: 630px;
+        }
+    }
+}
+
+/*------ checkbox -----*/
+.checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    width: 100%;
+    row-gap: 15px;
+    li{
+        min-width: 130px;
+        position: relative;
+        border: 1px solid $primary-color-one;
+        background-color: $bg-light-green;
+        border-radius: 5px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        label{
+            color: $neutral-color-one;
+        }
+    }
+}
+.styled-checkbox {
+    opacity: 0; // hide it
+    display: none;
+  
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      color: #111111;
+      a{
+          color: green;
+      }
+    }
+    & + label:before {
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 22px;
+      height: 22px;
+      border: 1px solid $primary-color-one;
+      background: transparent;
+      border-radius: 5px;
+    }
+    &:hover + label:before {
+      background:transparent;
+    }
+    
+    // Box focus
+    &:focus + label:before {
+      box-shadow: none;
+    }
+  
+    // Box checked
+    &:checked + label:before {
+      background: $primary-color-one;
+      border-color: $primary-color-one;
+    }
+
+  
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 50%;
+        background: $bg-body;
+        width: 2px;
+        height: 2px;
+        box-shadow: 
+            2px 0 0 $bg-body,
+            4px 0 0 $bg-body,
+            4px -2px 0 $bg-body,
+            4px -4px 0 $bg-body,
+            4px -6px 0 $bg-body,
+            4px -8px 0 $bg-body;
+        transform: rotate(45deg);
+    }
+}
+  .centered {
+    width: 300px;
+    margin: auto;
+  }
+
+
+// 
+
+.form-check{
+    display: flex;
+    line-height: 30px;
+    gap: 12px;
+    padding: 12px 0px;
+   
+}
+// captcha
+
+.captcha{
+    border: 1px solid $neutral-color-four;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 300px;
+    .captcha-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .captcha-img{
+            display: flex;
+            .captcha-sound{
+                float: right;
+                margin-left: 10px;
+                cursor: pointer;
+                img{
+                    display: block;
+                }
+            }
+        }
+        #generated-captcha {
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            border: 1px solid $border-gray;
+            background-color: $bg-body;
+            border-radius: 6px;
+            padding: 6px;
+            outline: none;
+            color: $neutral-color-one;
+            width: 125px;
+          }
+    }
+    .form-label{
+        font-size: 14px;
+    }
+    &.bg-captcha{
+        background-color: $font-weight1;
+    }
+    label{
+        span{
+            color: $primary-color-one;
+        }
+    }
+    #entered-captcha {
+        width: 100%;
+        border: 1px solid $neutral-color-three;
+        outline: none;
+        border-radius: 6px;
+        padding: 8px 15px;
+        font-size: 12px;
+      }
+}
+
+
+/*----- toggle-btn -----*/
+
+.tg-list{
+    .tgl {
+        display: none;
+        &,
+      &:after,
+      &:before,
+        & *,
+      & *:after,
+      & *:before,
+        & + .tgl-btn {
+            box-sizing: border-box;
+            &::selection {
+                background: none;
+            }
+        }
+        + .tgl-btn {
+            outline: 0;
+            display: block;
+            width: 80px;
+            height: 40px;        
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid $border-gray;
+            background-color: $bg-light-gray;
+            &:after,
+            &:before {
+                    position: relative;
+                    display: block;
+                    content: "";
+                    width: 50%;
+                    height: 100%;
+                }
+            &:after {
+                left: 0;
+            }
+            &:before {
+                display: none;
+            }
+        }
+        &:checked + .tgl-btn:after {
+            left: 50%;
+        }
+    }
+}
+.tgl-light {
+	+ .tgl-btn {
+		border-radius: 2em;
+		padding: 2px;
+		transition: all .4s ease;
+		&:after {
+			border-radius: 50%;
+			background: $neutral-color-two;
+			transition: all .2s ease;
+		}
+	}
+	&:checked + .tgl-btn {
+		background: $neutral-color-light;
+        border-color: $primary-color-one;
+        &::after{
+            background: $primary-color-one;
+        }
+	}
+}
+
+// search filter sec start
+
+
+.input-select .select2-container {
+   
+    width: 100% !important;
+}
+.input-select .select2-container .select2-selection--single {
+    border: 1px solid #5BB600;
+    background-color: #F8FFF1;
+    position: relative;
+    
+}
+.input-select .select2-container .select2-selection--single .select2-selection__arrow {
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    width: 40px;
+}
+.input-select .select2-container .select2-selection--single .select2-selection__arrow b {
+    border: 2px solid #111111;
+    height: 9px;
+    width: 9px;
+    transform: rotate(45deg) translateY(-50%);
+    border-top: 0;
+    border-left: 0;
+    transition: all 0.5s;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+}
+.input-select .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    transform: rotate(-136deg);
+}
+
+// search filter css
+
+.panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+  }
+
+  .panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    background-color: #FAFAFA;
+    border-color: #EEEEEE;
+  }
+
+  .panel-title {
+    font-size: 14px;
+  }
+
+  .panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+  }
+
+  .more-less {
+    float: right;
+    color: #212121;
+  }
+
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #EEEEEE;
+  }
+
+/*--- otp-modal --*/
+
+.modal-wrap{
+    .modal{
+        .modal-dialog{
+            max-width: 680px;
+            .modal-content{
+                align-items: center;
+                .close-popup{
+                    background-color: #60B00E;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                    position: absolute;
+                    right: -25px;
+                    top: -25px;   
+                    z-index: 111;
+                    cursor: pointer;                           
+                }
+                .modal-body{
+                    padding: 40px 0px 40px 0px;
+                    text-align: center;
+                    h4{
+                        line-height: 35px;
+                        padding-top: 20px;
+                    }
+                    h5{
+                        line-height: 35px;
+                        padding-top: 20px;
+                    }
+                    p{
+                        color: $primary-color-one;
+                    }
+                    span{
+                        color: $red-color;
+                        font-weight: $font-weight1;
+                    }
+                    form{
+                        .enterOtp{
+                            display: flex;
+                            column-gap: 13px;
+                            flex-wrap: wrap;
+                            row-gap: 10px;
+                            .otp{
+                                width: 70px;
+                                height: 70px;
+                                padding: 15px;
+                                text-align: center;
+                                border: 1px solid $primary-color-one;
+                                box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.04);
+                                border-radius: 5px;
+                                background-color: $neutral-color-light;
+                                &:focus{
+                                    border-color: $primary-color-one !important;
+                                }
+                            }
+                        }
+                        .otp-time {
+                            display: flex;
+                            justify-content: end;
+                            margin-top: 12px;
+                            margin-bottom: 30px;
+                            .resend{
+                                margin-right: 5px;
+                                color: $primary-color-one;
+                            }
+                        .extra-secondary-btn{
+                            background-color: $primary-color-one;
+                            color: $white-color;
+                            span{
+                                svg{
+                                    fill: $white-color;
+                                }
+                            }
+                        }
+                    }
+                    }
+                    .licence-details-modal{
+                        width: 100%;
+                        text-align: left;
+                        padding: 10px 40px;
+                        display: flex;
+                        border-bottom: 1px solid $neutral-color-three;
+                            p{
+                                font-weight: 400;
+                                width: 50%;
+                            }
+                            span{
+                                color: $bg-black;
+                                display: inline-block;
+                                font-weight: $font-weight1;
+                                width: 50%;
+                            }
+                           
+                    }
+                    
+                }
+                &.post-login-modal{
+                    align-items: flex-start;
+                    border: 0;
+                    border-radius: 12px;
+                   
+                    .modal-body{
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        width: 100%;
+                        .post-login-popupe-wrapper{
+                            width: 100%;
+                            text-align: left;
+                                .post-header-tile{
+                                    background-color: $primary-color-one;
+                                    padding: 15px 25px;
+                                    width: 100%;
+                                    text-align: left;
+                                    border-top-left-radius: 12px;
+                                        P{
+                                            color: $white-color;
+                                            font-weight: $font-weight1;
+                                        }
+                                }
+                                .post-text-modal{
+                                    width: 100%;
+                                    text-align: left;
+                                    padding: 40px;
+                                        ul{
+                                            width: 100%;
+                                            display: flex;
+                                            align-items: center;
+                                            flex-direction: column;
+                                            li{
+                                                border-bottom: 1px solid #ccc;
+                                                width: 100%;
+                                                display: flex;
+                                                padding: 14px 0px;
+                                                    p{
+                                                        width: 40%;
+                                                        color: $bg-black;
+                                                    }
+                                                    span{
+                                                        width: 60%;
+                                                        color: $bg-black;
+                                                    }
+                                                    &:last-child{
+                                                        border: 0;
+                                                    }
+                                            }
+                                            
+                                        }
+                                        .form-modal-wraper{
+                                            h4{
+                                                font-size: 22px;
+                                                padding-top: 0;
+                                                padding-bottom: 10px;
+                                            }
+                                            form{
+                                                .form-group{
+                                                    margin-bottom: 20px;
+                                                    textarea{
+                                                        width: 100%;
+                                                        min-height: 100px;
+                                                        background-color: $neutral-color-light;
+                                                    }
+                                                    label{
+                                                        font-size: 16px;
+                                                        font-weight: $font-weight2;
+                                                    }
+                                                    select{
+                                                        width: 100%;
+                                                        border: 1px solid $primary-color-one;
+                                                        background-color: $neutral-color-light;
+                                                        padding: 12px;
+                                                        border-radius: 5px;
+                                                    }
+                                                }
+                                                
+                                            }
+                                        }
+                                        .verify-payment-wrapper{
+                                            width: 100%;
+                                            text-align: center;
+                                                h4{
+                                                    margin-bottom: 20px;
+                                                }
+                                                .extra-secondary-bg-btn{
+                                                    font-weight: $font-weight2;
+                                                }
+                                                .notice-line{
+                                                    padding: 20px 0px;
+                                                }
+                                        }
+                                }
+                                &.top-header-content{
+                                    .modal-top-header{
+                                        overflow: hidden;
+                                        width: 100%;
+                                            ul{
+                                                display: flex;
+                                                background-color: $primary-color-one;
+                                                width: 100%;
+                                                flex-direction: inherit;
+                                                border-top-left-radius: 8px;
+                                                border-top-right-radius: 8px;
+                                                    li{
+                                                        color: $white-color;
+                                                        border: 0;
+                                                        display: inline;
+                                                        padding: 12px;
+                                                        width: inherit;
+                                                    }
+                                                    li + li{
+                                                        border-left: 1px solid #ccc;
+                                                    }
+                                            }
+                                    }
+                                    .post-text-modal{
+                                        padding: 0;
+                                            .form-modal-wraper{
+                                                padding: 20px;
+                                            }
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.modal-open {
+    padding-right: 0;
+}
+
+
+// resply box
+
+
+.reply-box-wrapper{
+    width: 100%;
+    background-color: $neutral-color-light;
+    padding: 20px;
+    border-radius: 6px;
+        .title-reply{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+                h4{
+                    font-size: 18px;
+                }
+        }
+        textarea{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #5BB600;
+            border-radius: 5px;
+                &:focus{
+                    border: 1px solid #5BB600;
+                }
+        }
+}
+
+
+
+
+
+
+.line-add{
+    border-top: 1px solid #cccccc;
+}
+
+
+
+
+
+
+
+
+// search filter sec end
+
+
+@include for-1366(){
+    .styled-checkbox + label:before{
+        width: 22px;
+    }
+}
+@include for-575(){
+    .styled-checkbox + label:before{
+        width: 35px;
+        margin-right: 5px;
+    }
+}
+@include for-380(){
+    .styled-checkbox + label{
+        font-size: 14px;
+        line-height: 24px;
+        &:before{
+            margin-right: 6px;
+            width: 62px;
+        }
+    }
+}
